@@ -45,11 +45,11 @@ _Ответ:_ https://hub.docker.com/repository/docker/np1r777/custom-nginx/gene
 ![Снимок экрана 2024-12-12 151358](https://github.com/user-attachments/assets/6b8d4b68-2f3d-4039-bfa2-a9c686336fc2)
 
 5. Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
-6. ![Снимок экрана 2024-12-12 151429](https://github.com/user-attachments/assets/af763de1-a01d-45dc-8fb2-7379a5d08419)
+![Снимок экрана 2024-12-12 151429](https://github.com/user-attachments/assets/af763de1-a01d-45dc-8fb2-7379a5d08419)
 7. Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
 ![Снимок экрана 2024-12-12 151454](https://github.com/user-attachments/assets/8e8d9fb8-c08a-4b48-875a-5d5db6b1f86b)
 9. Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
-10. ![Снимок экрана 2024-12-12 151514](https://github.com/user-attachments/assets/d68dda67-2956-475c-9d66-808f5b2dee23)
+![Снимок экрана 2024-12-12 151514](https://github.com/user-attachments/assets/d68dda67-2956-475c-9d66-808f5b2dee23)
 11. Запомните(!) и выполните команду ```nginx -s reload```, а затем внутри контейнера ```curl http://127.0.0.1:80 ; curl http://127.0.0.1:81```.
 ![Снимок экрана 2024-12-12 151529](https://github.com/user-attachments/assets/6bd5d82d-af20-48e1-8c51-97d9bec0ae22)
 
