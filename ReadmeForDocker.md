@@ -66,3 +66,54 @@ _Ответ:_ https://hub.docker.com/repository/docker/np1r777/custom-nginx/gene
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера. \
 _Ответ:_ ![Снимок экрана 2024-12-12 152413](https://github.com/user-attachments/assets/fbad1913-f2e6-49e1-9105-75beed8f5744)
 
+
+# Задание №5
+1. Создайте отдельную директорию(например /tmp/ZGU/docker/task) и 2 файла внутри него.
+"compose.yaml" с содержимым:
+
+```
+version: "3"
+services:
+  portainer:
+    network_mode: host
+    image: portainer/portainer-ce:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+
+"docker-compose.yaml" с содержимым:
+
+```
+version: "3"
+services:
+  registry:
+    image: registry:2
+
+    ports:
+    - "5000:5000"
+```
+
+И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model/#the-compose-file )
+![Снимок экрана 2024-12-13 105213](https://github.com/user-attachments/assets/cdbee779-b60a-4600-b400-82a626f36025)
+
+2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
+
+3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
+4. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
+5. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
+```
+version: '3'
+
+services:
+  nginx:
+    image: 127.0.0.1:5000/custom-nginx
+    ports:
+      - "9090:80"
+```
+6. Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".
+![Снимок экрана 2024-12-13 131936](https://github.com/user-attachments/assets/84956094-dabf-48ed-9239-cf6c2664f78a)
+
+7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
+![Снимок экрана 2024-12-13 132607](https://github.com/user-attachments/assets/1899436b-637f-4aed-b411-361e411dbaf0)
+![Снимок экрана 2024-12-13 132617](https://github.com/user-attachments/assets/fc31060b-4bd6-4b16-9a15-5fae53598b3b)
+![Снимок экрана 2024-12-13 132624](https://github.com/user-attachments/assets/6c609755-d81a-4e1b-b39c-4d5dbd06163a)
