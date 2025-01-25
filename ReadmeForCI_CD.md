@@ -148,14 +148,16 @@
 
 ## Задача 3. Интеграция инструментов
   - GitLab CI/CD:
-    Был написан файл ".gitlab-ci.yml" и создан gitlab-runner. Однако тесты не прошли. Этапы работы:
-    ![Снимок экрана 2025-01-21 124916](https://github.com/user-attachments/assets/a8f0aa34-da9e-4768-9940-6b10ca83dee7)
-    
-    ![Снимок экрана 2025-01-24 163043](https://github.com/user-attachments/assets/f6b22d3d-08fd-43ba-8e4f-6ce7b37072ec)
-    
-    ![Снимок экрана 2025-01-19 143705](https://github.com/user-attachments/assets/42831725-754f-4770-bfa6-1838738c6d54)
+    Был написан файл ".gitlab-ci.yml" и создан gitlab-runner. Тесты были пройдены. С резулььтатами можно ознакомиться ниже:
+
+    ![Снимок экрана 2025-01-25 121919](https://github.com/user-attachments/assets/0c25cf61-8563-474f-96f6-75c5561cb374)
+
+    ![Снимок экрана 2025-01-25 121008](https://github.com/user-attachments/assets/1ae3106e-7cdb-405c-a28f-1cee60fb1c7d)
+
 
   - Jenkins:
-    Был создан Jenkins-агент и Pipeline, однако теств не прошли. Этапы работы:
-    ![Снимок экрана 2025-01-24 133256](https://github.com/user-attachments/assets/8752fde6-053c-4298-b4a0-a7545a67afd6)
-    ![Снимок экрана 2025-01-24 212446](https://github.com/user-attachments/assets/f78353e9-7817-441e-b9c6-7a3ae20a5a74)
+    Был создан Jenkins-агент и Pipeline, тесты были пройдены. С результатами можно ознакомиться ниже:
+    ![Снимок экрана 2025-01-24 133256](https://github.com/user-attachments/assets/85774543-c76c-40b3-9c69-a384aff6fde0)
+
+    ![Снимок экрана 2025-01-25 132432](https://github.com/user-attachments/assets/7a228568-1372-4f8e-9573-bf1252a64fc5)
+
